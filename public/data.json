@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "type": "Single",
+        "Price": 5000,
+        "img": "https://i.ibb.co/VxdpP2z/single.jpg"
+    },
+    {
+        "id": 2,
+        "type": "Double",
+        "Price": 8000,
+        "img": "https://i.ibb.co/fpm1QtB/double.jpg"
+    },
+    {
+        "id": 3,
+        "type": "Family",
+        "Price": 12000,
+        "img": "https://i.ibb.co/6s2dB6B/family.jpg"
+    },
+    {
+        "id": 4,
+        "type": "Couple",
+        "Price": 15000,
+        "img": "https://i.ibb.co/fpm1QtB/double.jpg"
+    }
+]
