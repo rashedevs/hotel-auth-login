@@ -13,7 +13,8 @@ const Header = () => {
             <Link to='/inventory'>Inventory</Link>
             <Link to='/register'>Register</Link>
             {
-                user ? <button onClick={() => signOut(auth)}>Signout</button> : <Link to='/login'>Login</Link>
+                user ? <button onClick={() => signOut(auth)}>Signout</button> :
+                    <Link to='/login'>Login</Link>
             }
         </nav>
     );

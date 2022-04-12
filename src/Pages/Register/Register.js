@@ -6,14 +6,15 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-    const [name, setName] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth)
-    const handleName = e => {
-        setName(e.target.value)
+
+    const handleConfirmPassword = e => {
+        setConfirmPassword(e.target.value)
     }
     const handleEmail = e => {
         setEmail(e.target.value)
@@ -21,6 +22,7 @@ const Register = () => {
     const handlePassword = e => {
         setPassword(e.target.value)
     }
+
     if (user) {
         navigate('/inventory')
     }
@@ -30,16 +32,20 @@ const Register = () => {
 
         createUserWithEmailAndPassword(email, password)
 
+        if (password !== confirmPassword) {
+            return;
+        }
+
     }
     return (
 
         <div className="form-container">
             <form onSubmit={handleCreateUser} style={{ margin: "30px" }}>
-                <input onBlur={handleName} type="text" name="name" id="1" placeholder='Name' required />
+                <input onBlur={handleEmail} type="email" name="mail" id="1" placeholder='Email' required />
                 <br />
-                <input onBlur={handleEmail} type="email" name="mail" id="2" placeholder='Email' required />
+                <input onBlur={handlePassword} type="password" name="pass" id="2" placeholder='Password' required />
                 <br />
-                <input onBlur={handlePassword} type="password" name="pass" id="3" placeholder='Password' required />
+                <input onBlur={handleConfirmPassword} type="password" name="confirm pass" id="3" placeholder='Confirm Password' required />
                 <br />
                 <input type="submit" value="Register" />
             </form>

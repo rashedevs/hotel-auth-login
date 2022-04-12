@@ -14,8 +14,7 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
-        error,
+        loading
     ] = useSignInWithEmailAndPassword(auth);
 
     const handleEmail = e => {
@@ -36,8 +35,6 @@ const Login = () => {
                 <input onBlur={handleEmail} type="email" name="email" id="1" placeholder='Email' required />
                 <br />
                 <input onBlur={handlePassword} type="password" name="password" id="2" placeholder='Password' required />
-                <br />
-                <p>{error?.message}</p>
                 <p>{loading && 'Loading...'}</p>
                 <br />
                 <input className='submit' type="submit" value="Login" />
