@@ -24,11 +24,12 @@ const Register = () => {
     if (user) {
         navigate('/inventory')
     }
-    if (name) { alert(name) }
+
     const handleCreateUser = e => {
         e.preventDefault()
 
         createUserWithEmailAndPassword(email, password)
+
     }
     return (
 
